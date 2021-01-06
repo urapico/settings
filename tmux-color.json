@@ -1,0 +1,28 @@
+{
+  "groups": {
+    "active_window_status": {
+      "fg": "gray70",
+      "bg": "gray0",
+      "attrs": []
+    },
+    "window:current": {
+      "fg": "black",
+      "bg": "brightgreen",
+      "attrs": []
+    },
+    "window_name": {
+      "fg": "black",
+      "bg": "brightgreen",
+      "attrs": [
+        "bold"
+      ]
+    },
+    "session:prefix": {
+      "fg": "black",
+      "bg": "brightgreen",
+      "attrs": [
+        "bold"
+      ]
+    }
+  }
+}

@@ -10,6 +10,7 @@ brew install macvim
 brew install tmux
 brew install reattach-to-user-namespace
 brew install git
+brew install tig
 brew install hub
 brew install ghq
 brew install peco
@@ -20,6 +21,9 @@ brew install libiconv
 brew install libzip
 brew install exiftool
 brew install fish
+brew install gcc
+brew install fontforge
+brew install --cask fontforge
 
 # env
 brew install pyenv
@@ -40,6 +44,14 @@ git config --global alias.st status
 # font
 brew tap homebrew/cask-fonts
 brew cask install font-ricty-diminished
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Bold.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Oblique.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Bold.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Oblique.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-BoldOblique.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Regular.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-BoldOblique.ttf
+$SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Regular.ttf
 
 # symbolic link
 ln -s $SCRIPT_DIR/dotfiles/.tmux.conf $HOME/.tmux.conf
@@ -53,8 +65,6 @@ chsh -s /usr/local/bin/fish
 
 # vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
 vim +'PlugInstall --sync' +qa
 
 # pyenv

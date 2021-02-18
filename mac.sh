@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -E
+
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 PYTHON_V="3.8.0"
 
@@ -80,4 +82,5 @@ fonts/install.sh
 rm -rf fonts
 mkdir -p $HOME/.config/powerline
 cp -r $HOME/.pyenv/versions/3.8.0/lib/python3.8/site-packages/powerline/config_files/* $HOME/.config/powerline
+rm -rf $HOME/.config/powerline/colorschemes/tmux/default.json
 ln -s $SCRIPT_DIR/tmux-color.json $HOME/.config/powerline/colorschemes/tmux/default.json

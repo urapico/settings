@@ -29,8 +29,10 @@ brew install --cask fontforge
 
 # env
 brew install pyenv
-brew install nvm
 brew install jenv
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # git
 git config --global user.name "urapico"

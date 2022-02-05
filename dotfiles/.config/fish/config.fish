@@ -101,3 +101,5 @@ alias v='cd (ghq root)/(ghq list | peco)'
 
 alias cb='git symbolic-ref --short HEAD | tr -d "\n" | pbcopy'
 
+# direnv
+eval (direnv hook fish)

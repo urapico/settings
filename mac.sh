@@ -26,6 +26,7 @@ brew install fish
 brew install gcc
 brew install fontforge
 brew install --cask fontforge
+brew install direnv
 
 # env
 brew install pyenv
@@ -61,6 +62,7 @@ $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Regular.ttf
 ln -s $SCRIPT_DIR/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPT_DIR/dotfiles/.vimrc $HOME/.vimrc
 mkdir $HOME/.config/fish
+ln -s $SCRIPT_DIR/dotfiles/.bash_profile $HOME/.bash_profile
 ln -s $SCRIPT_DIR/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish
 
 # login shell

@@ -24,9 +24,9 @@ set -x PATH $PATH $HOME/development/flutter/bin
 
 # pyenv
 set -x PATH $PATH /usr/local/bin/pyenv
-set -x PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/bin $PATH
-eval (pyenv init - | source)
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+status is-interactive; and pyenv init --path | source
 
 # nvm
 # ~/.config/fish/functions/nvm.fish

@@ -58,6 +58,16 @@ $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Regular.ttf
 $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-BoldOblique.ttf
 $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Regular.ttf
 
+## 源ノ角ゴシック Code JP EL
+
+wget https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/2.012R.zip
+unzip 2.012R.zip
+cd source-han-code-jp-2.012R
+mv ./OTF ~/Library/Fonts
+cd ..
+rm -rf source-han-code-jp-2.012R
+rm -f 2.012R.zip
+
 # symbolic link
 ln -s $SCRIPT_DIR/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPT_DIR/dotfiles/.vimrc $HOME/.vimrc

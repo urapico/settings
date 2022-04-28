@@ -69,6 +69,12 @@ cd ..
 rm -rf source-han-code-jp-2.012R
 rm -f 2.012R.zip
 
+## hackgen
+
+brew tap homebrew/cask-fonts
+brew install font-hackgen
+brew install font-hackgen-nerd
+
 # symbolic link
 ln -s $SCRIPT_DIR/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPT_DIR/dotfiles/.vimrc $HOME/.vimrc

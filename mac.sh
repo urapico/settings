@@ -83,8 +83,10 @@ ln -s $SCRIPT_DIR/dotfiles/.bash_profile $HOME/.bash_profile
 ln -s $SCRIPT_DIR/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish
 
 # login shell
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+if ! grep -q /opt/homebrew/bin/fish /etc/shells; then
+    echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+    chsh -s /opt/homebrew/bin/fish
+fi
 
 # vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

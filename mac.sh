@@ -25,6 +25,7 @@ brew install exiftool
 brew install fish
 brew install gcc
 brew install wget
+brew install php
 brew install --cask finicky
 brew install fontforge
 brew install --cask fontforge

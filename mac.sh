@@ -28,6 +28,7 @@ brew install wget
 brew install --cask finicky
 brew install fontforge
 brew install --cask fontforge
+brew install --cask font-hack-nerd-font
 brew install direnv
 
 # env

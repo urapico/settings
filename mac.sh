@@ -13,7 +13,7 @@ brew install tmux
 brew install reattach-to-user-namespace
 brew install git
 brew install tig
-brew install hub
+brew install gh
 brew install ghq
 brew install peco
 brew install zlib

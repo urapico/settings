@@ -25,6 +25,7 @@ brew install exiftool
 brew install fish
 brew install gcc
 brew install wget
+brew install --cask finicky
 brew install fontforge
 brew install --cask fontforge
 brew install direnv
@@ -78,6 +79,7 @@ brew install font-hackgen-nerd
 # symbolic link
 ln -s $SCRIPT_DIR/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPT_DIR/dotfiles/.vimrc $HOME/.vimrc
+ln -s $SCRIPT_DIR/dotfiles/.finicky.js $HOME/.finicky.js
 mkdir $HOME/.config/fish
 ln -s $SCRIPT_DIR/dotfiles/.bash_profile $HOME/.bash_profile
 ln -s $SCRIPT_DIR/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish

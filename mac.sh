@@ -102,11 +102,10 @@ vim +'PlugInstall --sync' +qa
 
 # pyenv
 sudo xcode-select --switch /Library/Developer/CommandLineTools
-# CFLAeS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" \
-# LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" \
-export CFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix openssl)/include -I$(brew --prefix readline)/include -I$(brew --prefix ncurses)/include -I$(xcrun --show-sdk-path)/usr/include"
-export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib -L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix ncurses)/lib -L$(xcrun --show-sdk-path)/usr/lib"
-pyenv install -f --patch $PYTHON_V < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
+pyenv install $PYTHON_V
+pyenv global $PYTHON_V
 
 # powerline
 pip install --upgrade pip
@@ -115,6 +114,6 @@ git clone https://github.com/powerline/fonts.git
 fonts/install.sh
 rm -rf fonts
 mkdir -p $HOME/.config/powerline
-cp -r $HOME/.pyenv/versions/3.8.0/lib/python3.8/site-packages/powerline/config_files/* $HOME/.config/powerline
+cp -r $HOME/.pyenv/versions/$PYTHON_V/lib/python3.9/site-packages/powerline/config_files/* $HOME/.config/powerline
 rm -rf $HOME/.config/powerline/colorschemes/tmux/default.json
 ln -s $SCRIPT_DIR/tmux-color.json $HOME/.config/powerline/colorschemes/tmux/default.json

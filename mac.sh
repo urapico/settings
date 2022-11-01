@@ -3,7 +3,7 @@
 set -E
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
-PYTHON_V="3.8.0"
+PYTHON_V="3.9.13"
 
 # brew install
 xcode-select —install

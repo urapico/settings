@@ -34,6 +34,12 @@ brew install direnv
 brew install --cask fig
 brew install starship
 brew install exa
+brew install gnupg
+brew link --overwrite gnupg
+brew install pinentry-mac
+
+echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+killall gpg-agent
 
 # env
 brew install pyenv
@@ -52,6 +58,9 @@ git config --global color.branch auto
 git config --global core.precomposeunicode true
 git config --global core.quotepath false
 git config --global alias.st status
+git config --global --unset gpg.format
+git config --global commit.gpgsign true
+git config --global gpg.program gpg
 
 # font
 brew tap homebrew/cask-fonts

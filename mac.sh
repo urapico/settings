@@ -155,3 +155,8 @@ mkdir -p $HOME/.config/powerline
 cp -r $HOME/.pyenv/versions/$PYTHON_V/lib/python3.9/site-packages/powerline/config_files/* $HOME/.config/powerline
 rm -rf $HOME/.config/powerline/colorschemes/tmux/default.json
 ln -s $SCRIPT_DIR/tmux-color.json $HOME/.config/powerline/colorschemes/tmux/default.json
+
+# Key speed
+## You have to restart mac
+defaults write -g InitialKeyRepeat -int 20
+defaults write -g KeyRepeat -int 3

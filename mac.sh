@@ -49,7 +49,7 @@ git config --global alias.st status
 
 # font
 brew tap homebrew/cask-fonts
-brew cask install font-ricty-diminished
+brew install --cask font-ricty-diminished
 $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Bold.ttf
 $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminished-Oblique.ttf
 $SCRIPT_DIR/_re_font.sh $HOME/Library/Fonts/RictyDiminishedDiscord-Bold.ttf

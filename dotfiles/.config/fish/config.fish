@@ -1,3 +1,7 @@
+if status is-interactive
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
 # fisher
 function setup_fisher
     eval (curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher)
@@ -73,7 +77,6 @@ if test -d $JENV_ROOT
 end
 
 # git
-eval (hub alias -s)
 set -x GET_PAGER "LESSCHARSET=utf-8 less"
 alias glog="git --no-pager log -n 20 --oneline | nl"
 
@@ -94,12 +97,21 @@ function fish_user_key_bindings
   bind \cr 'peco_select_history_order' # Ctrl + R
 end
 
-# ghq
+# ghq, gh, git
 set -x PATH $PATH $HOME/Downloads/trang-20181222
-alias g='hub browse (ghq list | peco | cut -d "/" -f 2,3)'
-alias v='cd (ghq root)/(ghq list | peco)'
-
+alias g='gh repo view (ghq list --full-path | peco | cut -d "/" -f 6,7) -w'
+alias v='cd (ghq list --full-path | peco)'
+alias o='gh repo view -b (git symbolic-ref --short HEAD) -w'
 alias cb='git symbolic-ref --short HEAD | tr -d "\n" | pbcopy'
 
 # direnv
 eval (direnv hook fish)
+
+# starship
+starship init fish | source
+
+# gpg
+set -gx GPG_TTY (tty)
+# go lang
+set -x PATH $PATH (go env GOPATH)/bin
+set -x GOPATH (go env GOPATH)

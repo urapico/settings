@@ -4,6 +4,7 @@ set -E
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 PYTHON_V="3.9.13"
+COMPANY_GITHUB_ORG="your company org"
 
 # brew install
 xcode-select —install
@@ -49,6 +50,16 @@ brew install jenv
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # git
+mkdir ~/my_project
+mkdir ~/work
+cat <<EOF > ~/.gitconfig
+[ghq]
+root = ~/my_project
+
+[ghq "https://github.com/$COMPANY_GITHUB_ORG"]
+root = ~/work
+
+EOF
 git config --global user.name "urapico"
 git config --global user.email "urapico@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
@@ -58,9 +69,27 @@ git config --global color.branch auto
 git config --global core.precomposeunicode true
 git config --global core.quotepath false
 git config --global alias.st status
+git config --global alias.co checkout
+git config --global url.https://github.com/.insteadOf git@github.com:
 git config --global --unset gpg.format
 git config --global commit.gpgsign true
 git config --global gpg.program gpg
+git config --global --add --bool push.autoSetupRemote true
+
+cat <<EOF >> ~/.gitconfig
+[includeIf "gitdir:~/work/"]
+path = ~/.gitconfig_work
+EOF
+
+touch ~/.gitconfig_work
+cat <<EOF > ~/.gitconfig_work
+[user]
+        name = <your company name>
+        email = <your company e-mail address>
+[url "git@github.com:"]
+        insteadOf = https://github.com/
+EOF
+
 
 # font
 brew tap homebrew/cask-fonts

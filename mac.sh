@@ -30,6 +30,9 @@ brew install fontforge
 brew install --cask fontforge
 brew install --cask font-hack-nerd-font
 brew install direnv
+brew install --cask fig
+brew install starship
+brew install exa
 
 # env
 brew install pyenv
@@ -84,6 +87,7 @@ ln -s $SCRIPT_DIR/dotfiles/.finicky.js $HOME/.finicky.js
 mkdir $HOME/.config/fish
 ln -s $SCRIPT_DIR/dotfiles/.bash_profile $HOME/.bash_profile
 ln -s $SCRIPT_DIR/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish
+ln -s $SCRIPT_DIR/dotfiles/.config/starship.toml $HOME/.config/starship.toml
 
 # login shell
 if ! grep -q /opt/homebrew/bin/fish /etc/shells; then

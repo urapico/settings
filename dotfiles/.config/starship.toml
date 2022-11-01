@@ -1,0 +1,36 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+scan_timeout = 10
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]
+success_symbol = "[🌱 ❯❯](bold green) "
+error_symbol = "[👹 ❯❯](bold red) "
+format = "$symbol"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[directory]
+truncation_length = 2
+truncate_to_repo = true
+format = "[→ $path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = "🌀 "
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[gcloud]
+disabled = true
+
+[username]
+show_always = false
+disabled = true
